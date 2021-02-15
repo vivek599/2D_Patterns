@@ -104,7 +104,6 @@ void printInvertedHalfPyrammid(int w, int h, bool bHollow)
 				break;
 			}
 
-			width--;
 			for (size_t i = 0; i < width; i++)
 			{
 				if (i == 0 || i == width - 1 || j == 0 || j == h - 1)
@@ -117,6 +116,7 @@ void printInvertedHalfPyrammid(int w, int h, bool bHollow)
 				}
 			}
 			cout << endl;
+			width--;
 		}
 	}
 	else
@@ -129,12 +129,12 @@ void printInvertedHalfPyrammid(int w, int h, bool bHollow)
 				break;
 			}
 
-			width--;
 			for (size_t i = 0; i < width; i++)
 			{
 				cout << "*";
 			}
 			cout << endl;
+			width--;
 		}
 	}
 
@@ -147,9 +147,9 @@ int main()
 
 	printSolidRect(15, 13, true);
 
-	printHalfPyrammid(5, 3, false);
+	printHalfPyrammid(5, 5, false);
 
-	printHalfPyrammid(15, 13, true);
+	printHalfPyrammid(15, 15, true);
 
 	printInvertedHalfPyrammid(5, 5, false);
 
