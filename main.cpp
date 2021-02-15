@@ -39,6 +39,56 @@ void printSolidRect( int w, int h, bool bHollow)
 	cout << "-------------" << endl;
 }
 
+void printHalfPyrammid(int w, int h, bool bHollow)
+{
+	int width = 0;
+
+	if (bHollow)
+	{
+		cout << "Hollow HalfPyrammid: " << endl;
+		for (size_t j = 0; j < h; j++)
+		{
+			if (width > w)
+			{
+				break;
+			}
+
+			width++;
+			for (size_t i = 0; i < width; i++)
+			{
+				if (i == 0 || i == width - 1 || j == 0 || j == h - 1)
+				{
+					cout << "*";
+				}
+				else
+				{
+					cout << " ";
+				}
+			}
+			cout << endl;
+		}
+	}
+	else
+	{
+		cout << "Solid HalfPyrammid: " << endl;
+		for (size_t j = 0; j < h; j++)
+		{
+			if (width > w)
+			{
+				break;
+			}
+
+			width++;
+			for (size_t i = 0; i < width; i++)
+			{
+				cout << "*";
+			}
+			cout << endl;
+		}
+	}
+
+	cout << "-------------" << endl;
+}
 
 int main()
 { 
@@ -46,6 +96,9 @@ int main()
 
 	printSolidRect(15, 13, true);
 
+	printHalfPyrammid(5, 3, false);
+
+	printHalfPyrammid(15, 13, true);
 
 
 
