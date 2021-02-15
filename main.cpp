@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void printSolidRect( int w, int h, bool bHollow) 
+void PrintSolidRect( int w, int h, bool bHollow) 
 {
 	if (bHollow)
 	{
@@ -39,7 +39,7 @@ void printSolidRect( int w, int h, bool bHollow)
 	cout << "-------------" << endl;
 }
 
-void printHalfPyrammid(int w, int h, bool bHollow)
+void PrintHalfPyrammid(int w, int h, bool bHollow)
 {
 	int width = 0;
 
@@ -90,7 +90,7 @@ void printHalfPyrammid(int w, int h, bool bHollow)
 	cout << "-------------" << endl;
 }
 
-void printInvertedHalfPyrammid(int w, int h, bool bHollow)
+void PrintInvertedHalfPyrammid(int w, int h, bool bHollow)
 {
 	int width = w;
 
@@ -141,20 +141,113 @@ void printInvertedHalfPyrammid(int w, int h, bool bHollow)
 	cout << "-------------" << endl;
 }
 
+void PrintFullPyrammid(int w, int h, bool bHollow)
+{
+	int width = 1;
+	int halfwidth = w/2 + 1;
+	int hwidth2 = halfwidth;
+
+	if (bHollow)
+	{
+		cout << "Hollow FullPyrammid: " << endl;
+		for (size_t j = 0; j < h; j++)
+		{
+			if (width > w)
+			{
+				break;
+			}
+
+			hwidth2--;
+			if (hwidth2 > 0)
+			{
+				for (size_t i = 0; i < hwidth2; i++)
+				{
+					cout << " ";
+				}
+			}
+
+			for (size_t i = 0; i < width; i++)
+			{
+				if (i == 0 || i == width - 1 || j == 0 || j == h - 1)
+				{
+					if (i % 2 == 0)
+					{
+						cout << "*";
+					}
+					else
+					{
+						cout << "#";
+					}
+				}  
+				else
+				{
+					cout << "#";
+				}
+
+			}
+
+			width += 2;
+
+			cout << endl;
+		}
+	}
+	else
+	{
+		cout << "Solid FullPyrammid: " << endl;
+		for (size_t j = 0; j < h; j++)
+		{
+			if (width > w)
+			{
+				break;
+			}
+
+			hwidth2--;
+			if (hwidth2 > 0 )
+			{
+				for (size_t i = 0; i < hwidth2; i++)
+				{
+					cout << " ";
+				}
+			}
+
+			for (size_t i = 0; i < width; i++)
+			{
+				if (i % 2 == 0)
+				{
+					cout << "*";
+				}
+				else
+				{
+					cout << " ";
+				}
+			}
+
+			width += 2;
+
+			cout << endl;
+		}
+	}
+
+	cout << "-------------" << endl;
+}
+
 int main()
 { 
-	printSolidRect(5, 3, false);
+	//PrintSolidRect(5, 3, false);
+	//
+	//PrintSolidRect(15, 13, true);
+	//
+	//PrintHalfPyrammid(5, 5, false);
+	//
+	//PrintHalfPyrammid(15, 15, true);
+	//
+	//PrintInvertedHalfPyrammid(5, 5, false);
+	//
+	//PrintInvertedHalfPyrammid(15, 15, true);
 
-	printSolidRect(15, 13, true);
+	PrintFullPyrammid(20, 15, false);
 
-	printHalfPyrammid(5, 5, false);
-
-	printHalfPyrammid(15, 15, true);
-
-	printInvertedHalfPyrammid(5, 5, false);
-
-	printInvertedHalfPyrammid(15, 15, true);
-
+	PrintFullPyrammid(16, 16, true);
 
 
 	system("pause");
