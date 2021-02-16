@@ -231,6 +231,55 @@ void PrintFullPyrammid(int w, int h, bool bHollow)
 	cout << "-------------" << endl;
 }
 
+void PrintFullPyrammid2(int w, int h, bool bHollow)
+{
+	if (bHollow)
+	{
+		for (size_t i = 1; i <= h; i++)
+		{
+			for (size_t j = h; j >= i; j--)
+			{
+				cout << " ";
+			}
+
+			for (size_t j = 1; j <= 2 * i - 1; j++)
+			{
+				if (i == 1 || i == h || j == 1 || j == 2 * h - 1 )
+				{
+					cout << "*";
+				}
+				else
+				{
+					cout << " ";
+				}
+			}
+
+			cout << endl;
+
+		}
+	}
+	else
+	{
+		for (size_t i = 1; i <= h; i++)
+		{
+			for (size_t j = h; j >= i; j-- )
+			{
+				cout << " ";
+			}
+
+			for (size_t j = 1; j <= 2 * i - 1; j++)
+			{
+				cout << "*";
+			}
+
+			cout << endl;
+
+		}
+	}
+}
+
+
+
 int main()
 { 
 	//PrintSolidRect(5, 3, false);
@@ -245,10 +294,11 @@ int main()
 	//
 	//PrintInvertedHalfPyrammid(15, 15, true);
 
-	PrintFullPyrammid(20, 15, false);
+	//PrintFullPyrammid(20, 15, false);
 
-	PrintFullPyrammid(16, 16, true);
+	//PrintFullPyrammid(16, 16, true);
 
+	PrintFullPyrammid2(5, 5, true);
 
 	system("pause");
 
