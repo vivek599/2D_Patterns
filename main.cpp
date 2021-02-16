@@ -244,7 +244,7 @@ void PrintFullPyrammid2(int w, int h, bool bHollow)
 
 			for (size_t j = 1; j <= 2 * i - 1; j++)
 			{
-				if (i == 1 || i == h || j == 1 || j == 2 * h - 1 )
+				if (i == 1 || i == h || j == 1 || j == 2 * i - 1 )
 				{
 					cout << "*";
 				}
