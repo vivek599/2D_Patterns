@@ -298,7 +298,11 @@ int main()
 
 	//PrintFullPyrammid(16, 16, true);
 
+	PrintFullPyrammid2(5, 5, false);
+
 	PrintFullPyrammid2(5, 5, true);
+
+
 
 	system("pause");
 
